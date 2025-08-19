@@ -11,6 +11,7 @@ const jsonld = {
     vann: "http://purl.org/vocab/vann/",
     ldp: "http://www.w3.org/ns/ldp#",
     owl: "http://www.w3.org/2002/07/owl#",
+    qudt: "http://qudt.org/schema/qudt#",
     title: {
       "@id": "dct:title",
       "@container": "@language",
