@@ -46,6 +46,7 @@ module.exports = (languages) => `
     hub: String,
     deprecated: Boolean,
     isReplacedBy: [Concept]
+    unit: Concept @link(from: "unit___NODE")
   }
 
   type LanguageMap {

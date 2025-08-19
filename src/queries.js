@@ -111,7 +111,7 @@ module.exports.allConcept = (inScheme, languages) => `
             id
           }
           exactMatch {
-            id
+            id-
           }
           inScheme {
             id
@@ -131,6 +131,12 @@ module.exports.allConcept = (inScheme, languages) => `
           deprecated
           isReplacedBy {
             id
+          }
+          unit {
+            id
+            prefLabel {
+              ${[...languages].join(" ")}
+            }
           }
         }
       }
