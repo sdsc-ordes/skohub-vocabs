@@ -133,7 +133,6 @@ module.exports.allConcept = (inScheme, languages) => `
             id
           }
           unit {
-            id
             prefLabel {
               ${[...languages].join(" ")}
             }
