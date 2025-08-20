@@ -45,7 +45,7 @@ module.exports = (languages) => `
     inSchemeAll: [ConceptScheme],
     hub: String,
     deprecated: Boolean,
-    isReplacedBy: [Concept]
+    isReplacedBy: [Concept],
     unit: Concept @link(from: "unit___NODE")
   }
 
