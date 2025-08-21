@@ -111,7 +111,7 @@ module.exports.allConcept = (inScheme, languages) => `
             id
           }
           exactMatch {
-            id-
+            id
           }
           inScheme {
             id
