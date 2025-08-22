@@ -65,25 +65,28 @@ const Header = ({ siteTitle }) => {
       margin: 0;
       padding: 0;
       list-style: none;
-      display: inline-block;
-      width: 80px;
-      text-align: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: auto;
+      min-width: 80px;
 
       li {
-        margin: 0 0 0 5px;
-        display: inline;
+        margin: 0 0 0 10px;
+        display: inline-block;
+        padding: 0 2px;
 
         button {
           background: none;
           display: inline-block;
           padding: 5px;
           color: ${config.colors.skoHubMiddleGrey};
-          border: 1px solid ${config.colors.skoHubMiddleGrey};
-          border-radius: 30px;
+          border: 2px solid ${config.colors.skoHubMiddleGrey};
 
           &:hover {
             color: ${config.colors.skoHubAction};
-            border: 1px solid ${config.colors.skoHubAction};
+            border: 2px solid ${config.colors.skoHubAction};
           }
         }
 
@@ -92,8 +95,7 @@ const Header = ({ siteTitle }) => {
           font-weight: bold;
           display: inline-block;
           padding: 5px;
-          border: 1px solid ${config.colors.skoHubLightColor};
-          border-radius: 30px;
+          border: 2px solid ${config.colors.skoHubLightColor};
         }
       }
     }
