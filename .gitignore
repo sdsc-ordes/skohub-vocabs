@@ -73,5 +73,5 @@ yarn-error.log
 cypress/screenshots/
 cypress/videos/
 
-# User Config
-config.yaml
+# # User Config 
+# config.yaml

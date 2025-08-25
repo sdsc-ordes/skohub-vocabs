@@ -1,7 +1,9 @@
 import { useState } from "react"
 import CopyIcon from "../icons/Copy.jsx"
+import { getConfigAndConceptSchemes } from "../hooks/configAndConceptSchemes"
 
 const ConceptURI = ({ id }) => {
+  const { config } = getConfigAndConceptSchemes()
   const [isCopied, setIsCopied] = useState(false)
 
   async function copyToClipBoard() {
@@ -15,7 +17,7 @@ const ConceptURI = ({ id }) => {
 
   return (
     <div className="conceptURI">
-      <h2>{id}</h2>
+      <h3 style={{ color: config.colors.skoHubAction }}>{id}</h3>
       <div className="tooltip">
         <span className="tooltiptext">
           {!isCopied ? "Copy URI" : "Copied!"}
