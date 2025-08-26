@@ -154,16 +154,13 @@ const Layout = ({ children }) => {
           .inputStyle {
             background-color: ${config.colors.skoHubWhite};
             cursor: pointer;
-            border: 2px solid ${config.colors.skoHubMiddleGrey};
-            border-radius: 0px;
+            border: 1px solid ${config.colors.skoHubDarkGrey};
+            border-radius: 30px;
             color: ${config.colors.skoHubDarkColor};
 
             &:hover,
             &:focus {
               background-color: ${config.colors.skoHubLightGrey};
-              outline: 2px solid ${config.colors.skoHubMiddleColor};
-              outline-offset: -2px;
-              box-shadow: none;
             }
 
             &[type="button"] {
