@@ -123,8 +123,9 @@ const jsonld = {
       "@id": "dct:isReplacedBy",
       "@container": "@set",
     },
-    unit: {
+    "qudt:unit": {
       "@id": "qudt:unit",
+      "@container": "@language",
     },
   },
 }

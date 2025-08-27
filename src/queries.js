@@ -133,9 +133,7 @@ module.exports.allConcept = (inScheme, languages) => `
             id
           }
           unit {
-            prefLabel {
-              ${[...languages].join(" ")}
-            }
+            ${[...languages].join(" ")}
           }
         }
       }
@@ -215,6 +213,9 @@ module.exports.allConceptScheme = (languages) => `
       ${[...languages].join(" ")}
     }
     scopeNote {
+      ${[...languages].join(" ")}
+    }
+    unit {
       ${[...languages].join(" ")}
     }
     deprecated
