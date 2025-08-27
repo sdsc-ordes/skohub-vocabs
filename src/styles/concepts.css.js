@@ -17,9 +17,9 @@ export const conceptStyle = (colors) => css`
 
   .block {
     background-color: ${colors.skoHubWhite};
+    box-shadow: 0px 10px 20px ${colors.skoHubMiddleGrey};
     padding: 30px;
-    border-radius: 0px;
-    border: 2px solid ${colors.skoHubAction};
+    border-radius: 30px;
 
     @media only screen and (max-width: 1024px) {
       padding: 15px;
