@@ -8,6 +8,7 @@ RUN chown -R node:node /app
 
 COPY --chown=node:node .env.example .env
 COPY --chown=node:node . .
+COPY entrypoint.sh /
 
 USER node
 
