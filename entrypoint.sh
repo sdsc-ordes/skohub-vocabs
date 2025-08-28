@@ -5,7 +5,7 @@ set -e
 EXTERNAL_DIR="/custom-assets"
 echo "Checking for external branding components in $EXTERNAL_DIR"
 
-TARGET_DIR="/src"
+TARGET_DIR="/app/src"
 echo "Target directory for branding components is $TARGET_DIR"
 # only use entrypoint if running skohub-vocabs
 
