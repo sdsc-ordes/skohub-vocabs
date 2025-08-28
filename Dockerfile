@@ -19,4 +19,7 @@ RUN npm i --only=production
 # disable notifier warning
 RUN npm config set update-notifier false
 
+ENTRYPOINT ["/entrypoint.sh"]
+
+
 CMD ["npm", "run", "container-build"]
