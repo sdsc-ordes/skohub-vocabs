@@ -45,8 +45,8 @@ export const handleKeypresses = (labels, setLabels) => {
           setLabels({ ...labels, ["hiddenLabel"]: !labels["hiddenLabel"] })
       } else if (e.altKey && e.which === 83) {
         e.preventDefault()
-        Object.keys(labels).includes("scopeNote") &&
-          setLabels({ ...labels, ["scopeNote"]: !labels["scopeNote"] })
+        Object.keys(labels).includes("unit") &&
+          setLabels({ ...labels, ["unit"]: !labels["unit"] })
       }
     }
     document.addEventListener("keydown", handleKeyDown)

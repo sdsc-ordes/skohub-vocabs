@@ -40,7 +40,7 @@ export const compactedSlashURI = {
         en: "Agricultural, Forest and Nutritional Sciences, Veterinary medicine",
         uk: "Сільськогосподарські, лісові та харчові науки, ветеринарія",
       },
-      scopeNote: {
+      unit: {
         de: "Die Studiengänge der Agrar- und Forstwissenschaften sind stark durch naturwissenschaftliche Studienfächer wie Zoologie, Botanik, Physik und Chemie geprägt. Je nach Studienrichtung werden im Studium auch wirtschafts- und sozialwissenschaftliche Grundlagen vermittelt. Bei den Studiengängen der Forst- und Holzwirtschaften sowie der Umweltgestaltung stehen eher ingenieurwissenschaftlich-technische Inhalte im Fokus. ([Quelle](https://www.hochschulkompass.de/agrar-und-forstwissenschaften.html))",
       },
       topConceptOf: {

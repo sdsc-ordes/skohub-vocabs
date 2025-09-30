@@ -143,11 +143,11 @@
     rdfs:comment "Tested with 15_c_definition_no_unique_language.ttl" ;
   ] ;
   sh:property [
-    sh:path skos:scopeNote ;
+    sh:path skos:unit ;
     sh:severity sh:Violation ;
     sh:datatype rdf:langString ;
     sh:message "Scope Note should be provided with a language tag." ;
-    rdfs:comment "Tested with 16_c_scopeNote_no_language.ttl" ;
+    rdfs:comment "Tested with 16_c_unit_no_language.ttl" ;
   ] ;
   sh:property [
     sh:path skos:note ;

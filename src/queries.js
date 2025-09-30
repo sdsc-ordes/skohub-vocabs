@@ -61,7 +61,7 @@ module.exports.allConcept = (inScheme, languages) => `
           historyNote {
             ${[...languages].join(" ")}
           }
-          scopeNote {
+          unit {
             ${[...languages].join(" ")}
           }
           notation
@@ -212,7 +212,7 @@ module.exports.allConceptScheme = (languages) => `
     example {
       ${[...languages].join(" ")}
     }
-    scopeNote {
+    unit {
       ${[...languages].join(" ")}
     }
     unit {

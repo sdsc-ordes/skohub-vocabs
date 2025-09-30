@@ -70,7 +70,7 @@ const jsonld = {
     historyNote: {
       "@container": ["@language", "@set"],
     },
-    scopeNote: {
+    unit: {
       "@container": ["@language", "@set"],
     },
     notation: {

@@ -67,7 +67,7 @@ export const topConcept = {
       "Noch eine History Note",
     ],
   },
-  scopeNote: {
+  unit: {
     de: ["Meine Scope Note [Link](https://w3c.org)", "Noch eine Scope Note"],
   },
   notation: ["1"],

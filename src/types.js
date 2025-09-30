@@ -27,7 +27,7 @@ module.exports = (languages) => `
     changeNote: LanguageMapArray,
     editorialNote: LanguageMapArray,
     historyNote: LanguageMapArray,
-    scopeNote: LanguageMapArray,
+    unit: LanguageMapArray,
     notation: [String],
     example: LanguageMap,
     topConceptOf: [ConceptScheme] @link(from: "topConceptOf___NODE"),

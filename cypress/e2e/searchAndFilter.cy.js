@@ -152,7 +152,7 @@ describe("search and filter", () => {
     cy.get("span").contains("Konzept 1").should("exist")
   })
 
-  it("turning on scopeNote checkbox returns scopeNote matches", () => {
+  it("turning on unit checkbox returns unit matches", () => {
     cy.visit("/w3id.org/index.html", {
       onBeforeLoad(win) {
         Object.defineProperty(win.navigator, "language", { value: "de-DE" })
@@ -161,7 +161,7 @@ describe("search and filter", () => {
     cy.findByRole("textbox").type("Scope")
     cy.get("p").contains("Nothing found").should("exist")
     cy.get("#settings").click()
-    cy.get("#scopeNoteCheckBox").click()
+    cy.get("#unitCheckBox").click()
     cy.get("#closeModal").click()
     cy.get("span").contains("Konzept 1").should("exist")
   })

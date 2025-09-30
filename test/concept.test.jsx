@@ -205,13 +205,13 @@ describe.concurrent("Concept", () => {
     expect(items.length).toBe(2)
   })
 
-  it("renders scopeNotes", () => {
+  it("renders units", () => {
     render(<Concept pageContext={ConceptPC} />)
 
-    const scopeNote = screen.getByText(/Meine Scope Note/i)
-    expect(scopeNote).toBeInTheDocument()
+    const unit = screen.getByText(/Meine unit/i)
+    expect(unit).toBeInTheDocument()
 
-    const linkElement = within(scopeNote).getByRole("link", { name: /link/i })
+    const linkElement = within(unit).getByRole("link", { name: /link/i })
     expect(linkElement).toBeInTheDocument()
 
     const list = screen.getByRole("list", {

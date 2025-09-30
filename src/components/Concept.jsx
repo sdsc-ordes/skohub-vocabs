@@ -104,13 +104,13 @@ const Concept = ({
           </ul>
         </div>
       )}
-      {concept.scopeNote && i18n(language)(concept.scopeNote) !== "" && (
+      {concept.unit && i18n(language)(concept.unit) !== "" && (
         <div className="markdown">
           <h3 id="scopenote">ScopeNote</h3>
           <ul aria-labelledby="scopenote">
-            {i18n(language)(concept.scopeNote).map((scopeNote, i) => (
+            {i18n(language)(concept.unit).map((unit, i) => (
               <li key={i}>
-                <Markdown>{scopeNote}</Markdown>
+                <Markdown>{unit}</Markdown>
               </li>
             ))}
           </ul>

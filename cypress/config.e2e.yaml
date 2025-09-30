@@ -10,7 +10,7 @@ searchableAttributes:
   - "hiddenLabel"
   - "example"
   - "definition"
-  - "scopeNote"
+  - "unit"
 ui:
   title: "SkoHub Vocabs" # Title is mandatory
   logo: "skohub-signet-color.svg" # Path

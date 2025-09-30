@@ -369,9 +369,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
                 Object.hasOwn(concept.example, language) && {
                   example: i18n(language)(concept.example),
                 }),
-              ...(concept.scopeNote &&
-                Object.hasOwn(concept.scopeNote, language) && {
-                  scopeNote: i18n(language)(concept.scopeNote),
+              ...(concept.unit &&
+                Object.hasOwn(concept.unit, language) && {
+                  unit: i18n(language)(concept.unit),
                 }),
               notation: concept.notation,
             }
