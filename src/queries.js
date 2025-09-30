@@ -215,9 +215,6 @@ module.exports.allConceptScheme = (languages) => `
     unit {
       ${[...languages].join(" ")}
     }
-    unit {
-      ${[...languages].join(" ")}
-    }
     deprecated
   }
 `

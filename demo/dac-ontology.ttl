@@ -1,0 +1,421 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX dpv: <https://w3id.org/dpv#> 
+PREFIX duo: <http://purl.obolibrary.org/obo/> 
+PREFIX sdc: <https://swisscustodian.ch/doc/ontology/> 
+
+sdc:MyThesaurus a skos:ConceptScheme ;
+    dct:description "DAC Vocabulary for purposes, processing, measures and conditions of data access."@en ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "sdc" ;
+    vann:preferredNamespaceUri "https://swisscustodian.ch/doc/ontology/" ;
+    skos:hasTopConcept sdc:Object,
+        sdc:Property ,
+        sdc:Value ;
+        skos:prefLabel "DAC Ontologie"@de,
+        "DAC Ontology"@en,
+        "Ontologie dac"@fr 
+        .
+
+sdc:Object a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Objekt"@de,
+        "Object"@en,
+        "Objet"@fr ;
+.
+
+sdc:Property a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Eigenschaft"@de,
+        "Property"@en,
+        "Propriété"@fr ;
+.
+
+sdc:Value a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Wert"@de,
+        "Value"@en,
+        "Valeur"@fr .
+        
+###OBJECTS###
+sdc:Data a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Daten"@de,
+        "Data"@en,
+        "Données"@fr ;
+    skos:broader sdc:Object ;
+    skos:definition "Information that is processed or stored."@en ;
+    skos:example "Personal data, health data, genetic data."@en ;
+    dct:source <https://w3id.org/dpv#Data> .
+
+sdc:Process a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Prozess"@de,
+        "Process"@en,
+        "Processus"@fr ;
+    skos:broader sdc:Object ;
+    skos:definition "An action, activity, or method."@en ;
+    skos:example "Data processing activities such as collection, storage, use, disclosure."@en ;
+    dct:source <https://w3id.org/dpv#Process> .
+
+
+
+###PROPERTIES###
+
+sdc:hasStorageCondition a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat Speicherbedingung"@de,
+        "has storage condition"@en,
+        "a pour condition de stockage"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "A property used to indicate the conditions under which data is stored."@en ;
+    skos:example "Data must be stored in an encrypted format."@en ;
+    dct:source <https://w3id.org/dpv#hasStorageCondition> .
+
+sdc:hasDuration a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat Dauer"@de,
+        "has duration"@en,
+        "a pour durée"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "Indicates association with Duration."@en ;
+    skos:example "Data is retained for a period of five years."@en ;
+    dct:source <https://w3id.org/dpv#hasDuration> .
+
+sdc:hasProcessingCondition a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat Verarbeitungsbedingung"@de,
+        "has processing condition"@en,
+        "a pour condition de traitement"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "A property used to indicate the conditions under which data processing is permitted."@en ;
+    skos:example "Data processing is allowed only for research purposes."@en ;
+    dct:source <https://w3id.org/dpv#hasProcessingCondition> .
+
+sdc:hasLocation a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat Standort"@de,
+        "has location"@en,
+        "a pour emplacement"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "Indicates information about location."@en ;
+    skos:example "Data is stored in the EU only."@en ;
+    dct:source <https://w3id.org/dpv#hasLocation> .
+
+sdc:hasHumanInvolvement a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat menschliche Beteiligung"@de,
+        "has human involvement"@en,
+        "a pour implication humaine"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "Indicates Involvement of humans in processing such as within automated decision making process."@en ;
+    skos:example "Data is reviewed by a human before final decision-making."@en ;
+    dct:source <https://w3id.org/dpv#hasHumanInvolvement> .
+
+sdc:hasPurpose a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat Zweck"@de,
+        "has purpose"@en,
+        "a pour but"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "Indicates association with Purpose."@en ;
+    skos:example "Data is processed for marketing purposes."@en ;
+    dct:source <https://w3id.org/dpv#hasPurpose> .
+
+sdc:hasProcessing a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat Verarbeitung"@de,
+        "has processing"@en,
+        "a pour traitement"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "Indicates association with Processing."@en ;
+    skos:example "Data is processed through anonymization."@en ;
+    dct:source <https://w3id.org/dpv#hasProcessing> .
+
+sdc:hasTechnicalOrganisationalMeasure a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat technische und organisatorische Maßnahme"@de,
+        "has technical and organisational measure"@en,
+        "a pour mesure technique et organisationnelle"@fr ;
+    skos:broader sdc:Property ;
+    skos:definition "Indicates use or applicability of Technical or Organisational measure."@en ;
+    skos:example "Data is protected through encryption and access controls."@en ;
+    dct:source <https://w3id.org/dpv#hasTechnicalOrganisationalMeasure> .
+
+sdc:hasOrganisationalMeasure a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "hat organisatorische Maßnahme"@de,
+        "has organisational measure"@en,
+        "a pour mesure organisationnelle"@fr ;
+    skos:broader sdc:hasTechnicalOrganisationalMeasure ;
+    skos:definition "Indicates use or applicability of Organisational measure."@en ;
+    skos:example "Data access is restricted to authorized personnel only."@en ;
+    dct:source <https://w3id.org/dpv#hasOrganisationalMeasure> .
+
+
+###VALUES###
+
+sdc:Purpose a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Zweck"@de,
+        "Purpose"@en,
+        "But"@fr ;
+    skos:broader sdc:Value ;
+    skos:definition "A value used to indicate the purpose for which data is processed."@en ;
+    skos:example "Data is processed for research purposes."@en ;
+    dct:source <https://w3id.org/dpv#Purpose> .
+
+sdc:NonCommercialPurpose a skos:Concept ;
+    skos:broader sdc:Purpose ;
+    skos:prefLabel "Non-commercial Purpose"@en ;
+    skos:prefLabel "But non commercial"@fr ;
+    skos:prefLabel "Nicht-kommerzielle Zweck"@de ;
+    skos:definition "Use is restricted to non-commercial purposes."@en ;
+    dct:source <https://w3id.org/dpv#NonCommercialPurpose>;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:NonCommercialResearch a skos:Concept ;
+    skos:broader sdc:NonCommercialPurpose ;
+    skos:prefLabel "Non-Commercial Research"@en ;
+    skos:prefLabel "Recherche non commerciale"@fr ;
+    skos:prefLabel "Nicht-kommerzielle Forschung"@de ;
+    skos:definition "Purposes associated with conducting research in a non-commercial setting e.g. for a non-profit-organisation (NGO)."@en ;
+    dct:source <https://w3id.org/dpv#NonCommercialResearch> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:GeneticResearch a skos:Concept ;
+    skos:broader sdc:Purpose ;
+    skos:prefLabel "Genetic Research"@en ;
+    skos:prefLabel "Recherche génétique"@fr ;
+    skos:prefLabel "Genetische Forschung"@de ;
+    skos:definition "Research that involves the study of genes, genetic variation, and heredity."@en ;
+    dct:source sdc:GeneticResearch ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:GeneralResearchuse a skos:Concept ;
+    skos:broader sdc:Purpose ;
+    skos:prefLabel "General research use"@en ;
+    skos:prefLabel "Utilisation générale pour la recherche"@fr ;
+    skos:prefLabel "Allgemeine Nutzung für Forschung"@de ;
+    skos:definition "This data use permission indicates that use is allowed for general research use for any research purpose."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000042> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:HealthOrMedicalOrBiomedicalResearch a skos:Concept ;
+    skos:broader sdc:GeneralResearchuse ;
+    skos:prefLabel "Health or medical or biomedical research"@en ;
+    skos:prefLabel "Recherche en santé, médicale ou biomédicale"@fr ;
+    skos:prefLabel "Gesundheits-, medizinische oder biomedizinische Forschung"@de ;
+    skos:definition "This data use permission indicates that use is allowed for health/medical/biomedical purposes; does not include the study of population origins or ancestry."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000006> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:DiseaseSpecificResearch a skos:Concept ;
+    skos:broader sdc:HealthOrMedicalOrBiomedicalResearch ;
+    skos:prefLabel "Disease specific research"@en ;
+    skos:prefLabel "Recherche spécifique à une maladie"@fr ;
+    skos:prefLabel "Krankheitsspezifische Forschung"@de ;
+    skos:definition "This data use permission indicates that use is allowed provided it is related to the specified disease."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000007> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:NoRestriction a skos:Concept ;
+    skos:broader sdc:Purpose ;
+    skos:prefLabel "No restriction"@en ;
+    skos:prefLabel "Aucune restriction"@fr ;
+    skos:prefLabel "Keine Einschränkung"@de ;
+    skos:definition "This data use permission indicates there is no restriction on use."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000004> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:PopulationOriginsOrAncestryResearchOnly a skos:Concept ;
+    skos:broader sdc:Purpose ;
+    skos:prefLabel "Population origins or ancestry research only"@en ;
+    skos:prefLabel "Recherche uniquement sur les origines ou l'ascendance des populations"@fr ;
+    skos:prefLabel "Forschung nur zu Bevölkerungsursprüngen oder Abstammung"@de ;
+    skos:definition "This data use permission indicates that use of the data is limited to the study of population origins or ancestry."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000011>;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:AccessCondition a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Zugangsbedingung"@de,
+        "Access Condition"@en,
+        "Condition d'accès"@fr ;
+    skos:broader sdc:Value ;
+    skos:definition "A value used to indicate the conditions under which access to data is granted."@en ;
+    skos:example "Access is granted only to authorized users."@en ;
+    dct:source <https://w3id.org/dpv#AccessCondition> .
+
+sdc:EthicsApprovalRequired a skos:Concept ;
+    skos:broader sdc:AccessCondition ;
+sdc:needsAttachment true ;
+    skos:prefLabel "Ethics approval required"@en ;
+    skos:prefLabel "Approbation éthique requise"@fr ;
+    skos:prefLabel "Ethikgenehmigung erforderlich"@de ;
+    skos:definition "This data use modifier indicates that the requestor must provide documentation of local IRB/ERB approval."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000021> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:ProjectSpecificRestriction a skos:Concept ;
+    skos:broader sdc:AccessCondition ;
+sdc:needsAttachment true ;
+    skos:prefLabel "Project specific restriction"@en ;
+    skos:prefLabel "Restriction spécifique au projet"@fr ;
+    skos:prefLabel "Projektspezifische Einschränkung"@de ;
+    skos:definition "This data use modifier indicates that use is limited to use within an approved project."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000027> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:UserSpecificRestriction a skos:Concept ;
+    skos:broader sdc:AccessCondition ;
+sdc:needsAttachment true ;
+    skos:prefLabel "User specific restriction"@en ;
+    skos:prefLabel "Restriction spécifique à l'utilisateur"@fr ;
+    skos:prefLabel "Benutzerspezifische Einschränkung"@de ;
+    skos:definition "This data use modifier indicates that use is limited to use by approved users."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000026> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:InstituteSpecificRestriction a skos:Concept ;
+    skos:broader sdc:AccessCondition ;
+sdc:needsAttachment true ;
+    skos:prefLabel "Institution specific restriction"@en ;
+    skos:prefLabel "Restriction spécifique à l'institution"@fr ;
+    skos:prefLabel "Institutionsspezifische Einschränkung"@de ;
+    skos:definition "This data use modifier indicates that use is limited to use within an approved institution."@en ;
+    dct:source <http://purl.obolibrary.org/obo/DUO_0000028> ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:UploadDataAccessAgreement a skos:Concept ;
+    skos:broader sdc:AccessCondition ;
+sdc:needsAttachment true ;
+    skos:prefLabel "Upload signed Data Access Agreement (DAA)"@en ;
+    skos:prefLabel "Téléverser l'accord d'accès aux données signé (DAA)"@fr ;
+    skos:prefLabel "Hochladen der unterzeichneten Datenzugriffsvereinbarung (DAA)"@de ;
+    skos:definition "User must upload a signed Data Access Agreement legal document in PDF format."@en ;
+    dct:source sdc:UploadDataAccessAgreement ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:MandatoryTraining a skos:Concept ;
+    skos:broader sdc:AccessCondition ;
+sdc:needsAttachment true ;
+    skos:prefLabel "Mandatory Training"@en ;
+    skos:prefLabel "Formation obligatoire"@fr ;
+    skos:prefLabel "Verpflichtende Schulung"@de ;
+    skos:definition "User must complete mandatory training, e.g., BioMedIT Security Training."@en ;
+    dct:source sdc:MandatoryTraining ;
+    skos:inScheme sdc:MyThesaurus .
+
+sdc:StorageLocation a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:prefLabel "Speicherort"@de,
+        "Storage Location"@en,
+        "Emplacement de stockage"@fr ;
+    skos:broader sdc:Value ;
+    skos:definition "Location or geospatial scope where the data is stored"@en ;
+    skos:example "Data is stored in a secure cloud environment."@en ;
+    dct:source <https://w3id.org/dpv#StorageLocation> .
+
+### PROCESSING ###
+sdc:Processing a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Value ;
+    skos:prefLabel "Verarbeitung"@de,
+        "Processing"@en,
+        "Traitement"@fr ;
+    skos:definition "A value used to indicate the type of data processing activity."@en ;
+    dct:source <https://w3id.org/dpv#Processing> .
+
+sdc:Use a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Verwenden"@de,
+        "Use"@en,
+        "Utiliser"@fr ;
+    skos:definition "To use data."@en ;
+    dct:source <https://w3id.org/dpv#Use> .
+
+sdc:Analyse a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Analysieren"@de,
+        "Analyse"@en,
+        "Analyser"@fr ;
+    skos:definition "To study or examine the data in detail."@en ;
+    dct:source <https://w3id.org/dpv#Analyse> .
+
+sdc:Retrieve a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Abrufen"@de,
+        "Retrieve"@en,
+        "Récupérer"@fr ;
+    skos:definition "To retrieve data, often in an automated manner."@en ;
+    dct:source <https://w3id.org/dpv#Retrieve> .
+
+sdc:Consult a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Konsultieren"@de,
+        "Consult"@en,
+        "Consulter"@fr ;
+    skos:definition "To consult or query data."@en ;
+    dct:source <https://w3id.org/dpv#Consult> .
+
+sdc:Transform a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Transformieren"@de,
+        "Transform"@en,
+        "Transformer"@fr ;
+    skos:definition "To change the form or nature of data."@en ;
+    dct:source <https://w3id.org/dpv#Transform> .
+
+sdc:Adapt a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Anpassen"@de,
+        "Adapt"@en,
+        "Adapter"@fr ;
+    skos:definition "To modify the data, often rewritten into a new form for a new use."@en ;
+    dct:source <https://w3id.org/dpv#Adapt> .
+
+sdc:Align a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Ausrichten"@de,
+        "Align"@en,
+        "Aligner"@fr ;
+    skos:definition "To adjust the data to be in relation to another data."@en ;
+    dct:source <https://w3id.org/dpv#Align> .
+
+sdc:Combine a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Kombinieren"@de,
+        "Combine"@en,
+        "Combiner"@fr ;
+    skos:definition "To join or merge data."@en ;
+    dct:source <https://w3id.org/dpv#Combine> .
+
+sdc:Filter a skos:Concept ;
+    skos:inScheme sdc:MyThesaurus ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Filtern"@de,
+        "Filter"@en,
+        "Filtrer"@fr ;
+    skos:definition "To filter or keep data for some criteria."@en ;
+    dct:source <https://w3id.org/dpv#Filter> .
+
+sdc:TrustedResearchEnvironment a skos:Concept ;
+    skos:broader sdc:Processing ;
+    skos:prefLabel "Access via Trusted Research Environment (TRE)"@en ;
+    skos:prefLabel "Accès via un environnement de recherche de confiance (TRE)"@fr ;
+    skos:prefLabel "Zugriff über eine Trusted Research Environment (TRE)"@de ;
+    skos:definition "User can access the data only via a Trusted Research Environment (TRE)."@en ;
+    dct:source sdc:TrustedResearchEnvironment ;
+    skos:inScheme sdc:MyThesaurus .
