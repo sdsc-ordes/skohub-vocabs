@@ -62,7 +62,8 @@
   ],
   "license": "Apache License 2.0",
   "scripts": {
-    "build": "gatsby clean && gatsby build --prefix-paths",
+    "build": "gatsby clean && gatsby build",
+    "build-with-prefix": "gatsby clean && gatsby build --prefix-paths",
     "container-build": "gatsby build --prefix-paths",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write '**/*.{js,jsx}'",
