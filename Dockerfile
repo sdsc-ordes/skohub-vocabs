@@ -1,6 +1,6 @@
 FROM node:18.13.0-buster-slim
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 WORKDIR /app
 
