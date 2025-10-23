@@ -63,7 +63,7 @@ const Footer = () => {
           )}
           <li className="push-right">
             <a
-              href="https://www.hbz-nrw.de/impressum"
+              href="https://www.datascience.ch/impressum"
               target="_blank"
               rel="noopener noreferrer"
             >
