@@ -146,6 +146,8 @@ exports.onPreBootstrap = async ({ createContentDigest, actions, getNode }) => {
         hasTopConcept,
         member,
         deprecated,
+        domain,
+        range,
         "dc:title": dc_title,
         "dc:description": dc_description,
         ...properties
@@ -202,6 +204,8 @@ exports.onPreBootstrap = async ({ createContentDigest, actions, getNode }) => {
         closeMatch,
         related___NODE: (related || []).map((related) => related.id),
         relatedMatch,
+        domain___NODE: (domain || []).map((domain) => domain.id),
+        range___NODE: (range || []).map((range) => range.id),
         internal: {
           contentDigest: createContentDigest(graph),
           type,

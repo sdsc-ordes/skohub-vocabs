@@ -135,6 +135,18 @@ module.exports.allConcept = (inScheme, languages) => `
           unit {
             ${[...languages].join(" ")}
           }
+          domain {
+            id
+            prefLabel {
+              ${[...languages].join(" ")}
+            }
+          }
+          range {
+            id
+            prefLabel {
+              ${[...languages].join(" ")}
+            }
+          }
         }
       }
     }

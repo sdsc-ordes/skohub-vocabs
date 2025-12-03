@@ -244,6 +244,34 @@ const Concept = ({
           </ul>
         </div>
       )}
+      {concept.domain && concept.domain.length > 0 && (
+        <div>
+          <h3>Domain</h3>
+          <ul>
+            {concept.domain.map((domain) => (
+              <li key={domain.id}>
+                <Link to={getFilePath(domain.id, `html`, customDomain)}>
+                  {i18n(language)(domain.prefLabel) || domain.id}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {concept.range && concept.range.length > 0 && (
+        <div>
+          <h3>Range</h3>
+          <ul>
+            {concept.range.map((range) => (
+              <li key={range.id}>
+                <Link to={getFilePath(range.id, `html`, customDomain)}>
+                  {i18n(language)(range.prefLabel) || range.id}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {concept.inSchemeAll && (
         <div>
           <h3 id="in-scheme">In Scheme</h3>

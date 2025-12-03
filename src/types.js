@@ -47,6 +47,8 @@ module.exports = (languages) => `
     deprecated: Boolean,
     isReplacedBy: [Concept],
     unit: LanguageMap,
+    domain: [Concept] @link(from: "domain___NODE"),
+    range: [Concept] @link(from: "range___NODE"),
   }
 
   type LanguageMap {
