@@ -145,6 +145,20 @@ const Concept = ({
           </Markdown>
         </div>
       )}
+      {concept.unit && concept.unit.length > 0 && (
+        <div>
+          <h3>Unit</h3>
+          <ul>
+            {concept.unit.map((unit) => (
+              <li key={unit}>
+                <a href={unit} target="_blank" rel="noreferrer">
+                  {unit}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {concept.related && concept.related.length > 0 && (
         <div>
           <h3>Related</h3>

@@ -46,7 +46,7 @@ module.exports = (languages) => `
     hub: String,
     deprecated: Boolean,
     isReplacedBy: [Concept],
-    unit: LanguageMap,
+    unit: [String],
     domain: [Concept] @link(from: "domain___NODE"),
     range: [Concept] @link(from: "range___NODE"),
   }

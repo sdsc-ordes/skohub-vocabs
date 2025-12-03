@@ -132,9 +132,7 @@ module.exports.allConcept = (inScheme, languages) => `
           isReplacedBy {
             id
           }
-          unit {
-            ${[...languages].join(" ")}
-          }
+          unit
           domain {
             id
             prefLabel {
@@ -227,9 +225,7 @@ module.exports.allConceptScheme = (languages) => `
     scopeNote {
       ${[...languages].join(" ")}
     }
-    unit {
-      ${[...languages].join(" ")}
-    }
+    unit
     deprecated
   }
 `

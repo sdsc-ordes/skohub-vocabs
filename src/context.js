@@ -12,7 +12,7 @@ const jsonld = {
     vann: "http://purl.org/vocab/vann/",
     ldp: "http://www.w3.org/ns/ldp#",
     owl: "http://www.w3.org/2002/07/owl#",
-    qudt: "http://qudt.org/schema/qudt#",
+    qudt: "https://qudt.org/schema/qudt/",
     title: {
       "@id": "dct:title",
       "@container": "@language",
@@ -124,9 +124,10 @@ const jsonld = {
       "@id": "dct:isReplacedBy",
       "@container": "@set",
     },
-    "qudt:unit": {
+    unit: {
       "@id": "qudt:unit",
-      "@container": "@language",
+      "@type": "@id",
+      "@container": "@set",
     },
     domain: {
       "@id": "rdfs:domain",
