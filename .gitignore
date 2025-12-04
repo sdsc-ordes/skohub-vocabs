@@ -75,3 +75,5 @@ cypress/videos/
 
 # User Config
 config.yaml
+
+demo/
