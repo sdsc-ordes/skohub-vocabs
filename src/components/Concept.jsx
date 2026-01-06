@@ -151,9 +151,7 @@ const Concept = ({
           <ul>
             {concept.unit.map((unit) => (
               <li key={unit}>
-                <a href={unit} target="_blank" rel="noreferrer">
-                  {unit}
-                </a>
+                {unit}
               </li>
             ))}
           </ul>

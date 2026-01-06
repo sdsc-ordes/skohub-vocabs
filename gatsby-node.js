@@ -207,7 +207,7 @@ exports.onPreBootstrap = async ({ createContentDigest, actions, getNode }) => {
         relatedMatch,
         domain___NODE: (domain || []).map((domain) => domain.id),
         range___NODE: (range || []).map((range) => range.id),
-        unit: (unit || []).map((u) => typeof u === 'object' ? u.id : u),
+        unit: unit || [],
         internal: {
           contentDigest: createContentDigest(graph),
           type,

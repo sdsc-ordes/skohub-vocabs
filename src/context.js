@@ -126,7 +126,6 @@ const jsonld = {
     },
     unit: {
       "@id": "qudt:unit",
-      "@type": "@id",
       "@container": "@set",
     },
     domain: {
