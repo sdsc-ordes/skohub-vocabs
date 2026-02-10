@@ -96,6 +96,28 @@ const exportIndex = (index, conceptScheme, language) => {
   })
 }
 
+/**
+ * Recursively prunes a concept tree, keeping only concepts
+ * whose IDs are in the allowedIds set.
+ * This ensures each ConceptScheme page only shows concepts
+ * that belong to that scheme (via skos:inScheme).
+ *
+ * @param {Array} items - array of concept nodes with potential `narrower` children
+ * @param {Set} allowedIds - set of concept IDs that belong to the current scheme
+ * @returns {Array} filtered tree
+ */
+const pruneTreeByScheme = (items, allowedIds) => {
+  if (!items || !items.length) return items
+  return items
+    .filter((item) => allowedIds.has(item.id))
+    .map((item) => ({
+      ...item,
+      narrower: item.narrower
+        ? pruneTreeByScheme(item.narrower, allowedIds)
+        : item.narrower,
+    }))
+}
+
 exports.onPreBootstrap = async ({ createContentDigest, actions, getNode }) => {
   const { createNode, createNodeField } = actions
   const ttlFiles = getTurtleFiles("./data", [])
@@ -316,11 +338,29 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         const conceptsInScheme = await graphql(
           queries.allConcept(conceptScheme.id, languages)
         )
+
+        // Build set of concept IDs belonging to this scheme and
+        // prune the hasTopConcept tree so each scheme only shows its own concepts
+        const conceptIdsInScheme = new Set(
+          conceptsInScheme.data.allConcept.edges.map(({ node }) => node.id)
+        )
+        const filteredConceptScheme = {
+          ...conceptScheme,
+          hasTopConcept: pruneTreeByScheme(
+            conceptScheme.hasTopConcept,
+            conceptIdsInScheme
+          ),
+        }
+
         // embed concept scheme data
         const embeddedConcepts = [
           {
-            json: omitEmpty(Object.assign({}, conceptScheme, context.jsonld)),
-            jsonld: omitEmpty(Object.assign({}, conceptScheme, context.jsonld)),
+            json: omitEmpty(
+              Object.assign({}, filteredConceptScheme, context.jsonld)
+            ),
+            jsonld: omitEmpty(
+              Object.assign({}, filteredConceptScheme, context.jsonld)
+            ),
           },
         ]
 
@@ -394,12 +434,14 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: getFilePath(conceptScheme.id, `html`, config.customDomain),
           component: path.resolve(`./src/components/ConceptScheme.jsx`),
           context: {
-            node: conceptScheme,
+            node: filteredConceptScheme,
             embed: embeddedConcepts,
             customDomain: config.customDomain,
           },
         })
-        const jsonldConceptScheme = replaceMultipleKeysInObject(conceptScheme, [
+        const jsonldConceptScheme = replaceMultipleKeysInObject(
+          filteredConceptScheme,
+          [
           ["dc_title", "dc:title"],
           ["dc_description", "dc:description"],
         ])
@@ -458,4 +500,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
   })
+}
+
+// Export for testing only
+if (process.env.NODE_ENV === "test") {
+  exports._pruneTreeByScheme = pruneTreeByScheme
 }
